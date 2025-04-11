@@ -68,7 +68,8 @@ This will give us all the h2 inside an h1
 **Cascading and Specificity** - 
 CSS reads from top to down applying rules, that means whichever rule is applied last will override the same rule if mentioned before it as well.This only applied to selectors of same specificity. Classes have more specificty than elements so they will override element rules even if they are written before the element rules.
 
-*Note* - You can check which CSS properties are applied and which are ignored using dev tools on the browser.
+*Note* - 1) You can check which CSS properties are applied and which are ignored using dev tools on the browser.<br />
+2) `!Important` can overrider specificity but this should not be used
 
 **Inheritance** - When we apply a property to a parent element is inherited by the children. Not all properties can be inherited.
 
@@ -79,6 +80,8 @@ CSS reads from top to down applying rules, that means whichever rule is applied 
         font : inherit;
     }
 ```
+
+
 
 
 
