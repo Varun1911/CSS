@@ -1,0 +1,24 @@
+body 
+{
+    font-size: 22px;
+}
+
+p{
+    color: purple;
+}
+
+.grey{
+    background-color: grey;
+}
+
+#second{
+    font-style: italic;
+}
+
+h1,h2{
+    color: blue;
+}
+
+p span{
+    background-color: gold;
+}
