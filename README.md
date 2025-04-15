@@ -134,3 +134,114 @@ There are more ways of representing colors but these are the common ones.
 Use <a href = "https://coolors.co/">Coolers</a> website to generate color palletes and check contrast.
 
 
+<h2>Units and Sizes</h2>
+
+**Absolute Units**
+<table>
+<thead>
+<tr>
+<th>Unit</th>
+<th>Name</th>
+<th>Equivalent to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cm</code></td>
+<td>Centimeters</td>
+<td>1cm = 37.8px = 25.2/64in</td>
+</tr>
+<tr>
+<td><code>mm</code></td>
+<td>Millimeters</td>
+<td>1mm = 1/10th of 1cm</td>
+</tr>
+<tr>
+<td><code>Q</code></td>
+<td>Quarter-millimeters</td>
+<td>1Q = 1/40th of 1cm</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>Inches</td>
+<td>1in = 2.54cm = 96px</td>
+</tr>
+<tr>
+<td><code>pc</code></td>
+<td>Picas</td>
+<td>1pc = 1/6th of 1in</td>
+</tr>
+<tr>
+<td><code>pt</code></td>
+<td>Points</td>
+<td>1pt = 1/72nd of 1in</td>
+</tr>
+<tr>
+<td><code>px</code></td>
+<td>Pixels</td>
+<td>1px = 1/96th of 1in</td>
+</tr>
+</tbody>
+</table>
+<br>
+The only value that is commonly used is px (pixels).<br /><br />
+
+```css
+p{
+    font-size: 20px ; /*default size = 16px*/
+}
+```
+**Note** - We should not use absolute font size as it takes away the ability of the user to change the font size from browser settings. There are ohter places we can use px like - border : 2px etc.
+<br /><br />
+**Relative units**
+
+*percentage*
+```css
+h1{
+    width : 50%
+}
+```
+h1 will take 50% of its parent i.e 50% of what is available to it.
+<br /><br />
+*rem* - font size of the root element<br />
+*em* - font size of the parent element
+
+```css
+p{
+    font-size : 1.5rem
+}
+
+p{
+    font-size : 1.5em
+}
+```
+**Imp** - It's good practice to use `rem` instead of `em`. We can use `em` for things like margins and padding. When the font-size is set on an element, then `em` doesn't look at the parent it looks at the element itself.
+
+```css
+h1{
+    font-size : 3rem;
+    padding : 0.5em;    /*0.5 of the font size of h1*/
+}
+```
+<br /><br />
+**CSS Reset**
+The browser adds some default css to our elements. We can remove that if we want.
+```css
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+```
+<br /><br />
+*vh* - 1% of the viewport heigth<br />
+*vw* - 1% of the viewport width
+
+```css
+main{
+    width:50vw;
+}
+```
+Use `dvh` and `dvw` instead of `vh` and `vw` as it<br />
+    ->Doesn’t shrink when mobile UI (like the address bar) shows/hides.<br />
+    ->Provides consistent behavior, especially on mobile devices.
