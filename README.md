@@ -52,19 +52,37 @@ We should avoid using ID Selectors in CSS.<hr />
 ```
 <hr><br>
 
+**Group and Combinators**<br />
+
 We can group selectors like - 
+<br />Same properties applied to both type of elements
 ```css
-h1, h2{
-}
+h1, h2{}
 ```
+<br />
 
 We can select nested elements like so - 
 ```css
 h1 h2{}
 ```
-<br />
-This will give us all the h2 inside an h1
+This will give us all the h2 inside an h1<br /><br />
 
+We can select direct child like -
+
+```css
+h1>h2{}
+```
+<br /><br />
+We can select adjacent siblings with -
+```css
+h1+h2{}
+```
+<br /><br />
+We can select general seblings with - 
+```css
+h1~h2{}
+```
+<br /><br />
 **Cascading and Specificity** - 
 CSS reads from top to down applying rules, that means whichever rule is applied last will override the same rule if mentioned before it as well.This only applied to selectors of same specificity. Classes have more specificty than elements so they will override element rules even if they are written before the element rules.
 
@@ -81,7 +99,38 @@ CSS reads from top to down applying rules, that means whichever rule is applied 
     }
 ```
 
+<h2>Colors</h2>
+
+**Background Color** 
+```css
+body{
+    background-color: papayawhip;
+    background: papayawhip;
+}
+```
+We can use both the property names. `background-color` is only to set color while `background` lets us set other properties too.
 
 
+**Font Color**
+```css
+body{
+    color : #FFF;
+}
+```
+
+**Different ways of setting colors**
+```css
+body{
+    color : #0F11A3;
+    color : #FA0;   /*if the pairs match, we can write hex code in short -> FFAA00*/
+    color: red;
+    color : rgb(123,230,55);
+    color : rgba(123,230,55, 0.5);
+    color: hsl(360, 39%, 46%);
+}
+```
+There are more ways of representing colors but these are the common ones.
+
+Use <a href = "https://coolors.co/">Coolers</a> website to generate color palletes and check contrast.
 
 
