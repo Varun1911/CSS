@@ -12,7 +12,7 @@ If we use all the ways together, inline styling has the highest priority. The ot
 
 
 <img src = "./CSS_Anatomy.png" width = 400px style = "display : block; margin : auto" alt = "CSS Anatomy" /><br />
-<center>Rule Set</center><br />
+<p style="display: block; width: fit-content; margin: 0 auto;">Rule Set</p><br />
 
 
 **Errors**<br />
@@ -245,3 +245,117 @@ main{
 Use `dvh` and `dvw` instead of `vh` and `vw` as it<br />
     ->Doesn’t shrink when mobile UI (like the address bar) shows/hides.<br />
     ->Provides consistent behavior, especially on mobile devices.
+
+
+<h2>Box Model</h2><br />
+<img src = "https://www.hubspot.com/hs-fs/hubfs/css%20box%20model_2.webp?width=700&height=480&name=css%20box%20model_2.webp" alt = "box model" width = "50%" style = "display : block; margin : auto">
+<br /><br />
+
+**box-sizing** - <br />
+
+*`border-box`* : width and height specified include the content, padding, and border, and the browser adjusts the content area to fit within those dimensions. <br />
+*`content-box`* : the width and height specified are for the content area only, and padding and borders are added on top of that, increasing the overall size.
+
+**Note** - We can check our element's box model in the dev tools, in the computed tab.
+
+**Margin And Padding**
+
+Ways to set margins and paddings - <br />
+1. Shorthand property 
+```css
+h1
+{
+    margin: 10px; /* all sides */
+    padding: 10px 20px; /* top/bottom 10px, right/left 20px */
+    margin: 10px 20px 30px; /* top, right/left, bottom */
+    padding: 10px 20px 30px 40px; /* top, right, bottom, left */
+}
+```
+<br />
+
+2. Individual sides
+```css
+h1{
+    margin-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    margin-left: 40px;
+}
+```
+<br />
+
+3. Using `auto` for centering
+
+```css
+h1{
+    margin: 0 auto; /* horizontally centers a block element */
+    padding : 0 auto;
+}
+```
+<br />
+
+**Border**<br />
+
+Ways to set border - <br />
+
+1. Shorthand border property
+```css
+h1{
+    /* syntax: border: [width] [style] [color]; 
+        This sets all 4 sides */
+    border: 2px solid black;
+}
+```
+<br />
+
+2. Individual sides
+```css
+h1{
+    border-top: 2px dashed red;
+    border-right: 3px solid green;
+    border-bottom: 1px dotted blue;
+    border-left: 4px double purple;
+}
+```
+<br />
+
+3. Separate properties<br />
+
+You can control border width, style, and color individually:
+```css
+h1{
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+```
+
+Or for individual sides:
+```css
+h1{
+    border-top-width: 2px;
+    border-right-style: dashed;
+    border-left-color: blue;
+}
+```
+<br />
+
+4. Border radius (rounded corners)
+```css
+h1{
+    border-radius: 10px;            /* all corners */
+    border-radius: 10px 0 10px 0;   /* top-left, top-right, bottom-right, bottom-left */
+}
+```
+<br />
+
+5. Border image
+```css
+h1{
+    border: 10px solid transparent;
+    border-image: url(border.png) 30 round;
+}
+```
+<br />
+
+**Note** - `outline` is also written like border but it's not part of the box model. We can offest the outline using the property `outline-offset`. 
