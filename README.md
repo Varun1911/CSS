@@ -359,3 +359,8 @@ h1{
 <br />
 
 **Note** - `outline` is also written like border but it's not part of the box model. We can offest the outline using the property `outline-offset`. 
+
+<h2>Texts and Fonts</h2>
+<br />
+
+**Note** - forms and buttons do not inherit font by default and we need to explicitly mention that.
