@@ -405,3 +405,38 @@ font: italic small-caps bold 16px/1.5 "Helvetica", sans-serif;
 *Using Link* - Get the link tag from the font site like Google fonts and paste it before you link your stylesheet.
 <br />
 *Using Import* - Get the import url and paste it on the top of your css file.
+
+<br />
+
+<h3>Hypertext Links</h3>
+
+Links are underlined by default. We can remove that by using -
+```css
+a{
+    text-decoration : none;
+}
+```
+<br>
+We can change the color of the links in various states like default, visited and active (holding down mouse1 on the link)
+
+```css
+a{
+    color : red;
+}
+
+a:visited{
+    color: purple;
+}
+
+a:hover{
+    color: darkred;
+    opacity : 0.8;
+}
+```
+
+`visited`, `active`, `focus` and `hover` are pseudo classes.<br />
+These pseudo classes have same specificity, so their order matters.
+
+We can chain pseudo classes like `a:visited:hover`.<br />
+
+We can change other things as well like `background`.
