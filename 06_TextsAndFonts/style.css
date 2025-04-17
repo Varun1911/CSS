@@ -8,5 +8,8 @@ body{
 } */
 
 p{
-    text-decoration : none; 
+    text-decoration : underline wavy red 1px; 
+    text-transform: capitalize;
+    text-align: start;
+    /* letter-spacing: 0.1em; */
 }
