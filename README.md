@@ -440,3 +440,75 @@ These pseudo classes have same specificity, so their order matters.
 We can chain pseudo classes like `a:visited:hover`.<br />
 
 We can change other things as well like `background`.
+
+<h2>List Styles</h2>
+<table class="min-w-full" data-start="163" data-end="538"><thead data-start="163" data-end="189"><tr data-start="163" data-end="189"><th data-start="163" data-end="174">Property</th><th data-start="174" data-end="189">Description</th></tr></thead><tbody data-start="217" data-end="538"><tr data-start="217" data-end="290"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="217" data-end="237"><code data-start="219" data-end="236">list-style-type</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)] min-w-[calc(var(--thread-content-max-width)/3)]" data-start="237" data-end="290">Defines the type of marker (bullet, number, etc.)</td></tr><tr data-start="291" data-end="386"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="291" data-end="315"><code data-start="293" data-end="314">list-style-position</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)] min-w-[calc(var(--thread-content-max-width)/3)]" data-start="315" data-end="386">Specifies whether the marker is inside or outside the list item box</td></tr><tr data-start="387" data-end="469"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="387" data-end="408"><code data-start="389" data-end="407">list-style-image</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)] min-w-[calc(var(--thread-content-max-width)/3)]" data-start="408" data-end="469">Replaces the default bullet or number with a custom image</td></tr><tr data-start="470" data-end="538"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="470" data-end="485"><code data-start="472" data-end="484">list-style</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)] min-w-[calc(var(--thread-content-max-width)/3)]" data-start="485" data-end="538">A shorthand to combine the above three properties</td></tr></tbody></table>
+
+We can add attributes like `start` and `reversed` to `ol` tag which allows us to start the start the list from the desired number and reverse the numeric order respectively.
+
+
+```css
+ul {
+  list-style-type: disc;         /* options: disc, circle, square, none */
+  list-style-position: outside;  /* options: inside, outside */
+}
+
+ol {
+  list-style-type: decimal;      /* options: decimal, lower-roman, upper-alpha, etc. */
+}
+
+ul.custom {
+  list-style-image: url('bullet.png');
+}
+```
+<br />
+
+`list-style-position` is a CSS property that controls where the bullet or number appears in relation to the content of a list item 
+
+```css
+list-style-position: inside | outside;
+```
+
+**Relevant Pseudo Classes**
+<br />
+
+*Item Position*
+```css
+li:first-child      /* First <li> in the list */
+li:last-child       /* Last <li> in the list */
+li:nth-child(2)     /* 2nd <li> */
+li:nth-child(odd)   /* Odd-numbered <li>s */
+li:nth-child(even)  /* Even-numbered <li>s */
+li:nth-of-type(3)   /* 3rd <li> of its type */
+```
+
+<br />
+
+*Negation*
+```css
+li:not(:last-child) /* All but the last <li> */
+```
+<br />
+
+*Empty List Items*
+```css
+li:empty            /* Selects <li> elements with no content */
+```
+<br />
+
+**Relevant Pseudo Element**
+
+`::marker` targets the bullet (•) of `ul` or the number (1., 2., etc.) of `ol` list items.
+
+```css
+ul
+{
+    list-style-type : none;
+}
+
+li::marker {
+    color: red;
+    font-size: 1.2em;
+    content: "🔥 ";
+}
+```

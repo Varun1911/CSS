@@ -7,5 +7,24 @@ body {
 }
 
 ol{
-    /* list-style-type; */
+    list-style-type :decimal-leading-zero;
+    list-style-position:inside;
+}
+
+ul
+{
+    text-align: center;
+    list-style-position: inside;
+    /* list-style-image: url(./images/checkmark.png); */
+    /* list-style: url(./images/checkmark.png) inside; */
+}
+
+ul li:nth-child(odd)
+{
+  color: red;
+}
+
+::marker{
+  color: black;
+  
 }
