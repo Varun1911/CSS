@@ -1052,3 +1052,24 @@ There are many types of diplay properties, 4 of them are  - `block`, `inline`, `
 `inline-block` - It a mix of both inline and block.It allows inline elements to have margins and height without overlapping other elements.
 
 <table class="min-w-full" data-start="1035" data-end="1638"><thead data-start="1035" data-end="1120"><tr data-start="1035" data-end="1120"><th data-start="1035" data-end="1065">Feature</th><th data-start="1065" data-end="1082"><code data-start="1067" data-end="1075">inline</code></th><th data-start="1082" data-end="1100"><code data-start="1084" data-end="1091">block</code></th><th data-start="1100" data-end="1120"><code data-start="1102" data-end="1116">inline-block</code></th></tr></thead><tbody data-start="1208" data-end="1638"><tr data-start="1208" data-end="1284"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1208" data-end="1238">Flows inline with text</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1238" data-end="1254">✅</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1254" data-end="1279">❌ (starts on new line)</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1279" data-end="1284">✅</td></tr><tr data-start="1285" data-end="1370"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1285" data-end="1317">Respects <code data-start="1296" data-end="1303">width</code> and <code data-start="1308" data-end="1316">height</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1317" data-end="1333">❌</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1333" data-end="1351">✅</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1351" data-end="1370">✅</td></tr><tr data-start="1371" data-end="1456"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1371" data-end="1401">Accepts margin/padding</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1401" data-end="1419">Only left/right</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1419" data-end="1437">✅</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1437" data-end="1456">✅</td></tr><tr data-start="1457" data-end="1540"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1457" data-end="1487">Stacks with other elements</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1487" data-end="1503">✅</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1503" data-end="1521">❌</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1521" data-end="1540">✅</td></tr><tr data-start="1541" data-end="1638"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1541" data-end="1571">Use cases</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1571" data-end="1589">Links, spans</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1589" data-end="1608">Divs, sections</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1608" data-end="1638">Buttons, badges, nav items</td></tr></tbody></table>
+
+<h2>Floats and Clears</h2>
+
+The `float` property moves an element to the left or right, allowing text and inline elements to wrap around it.
+
+```HTML
+<img src="food.jpg" class="float-img">
+<p>This text wraps around the image.</p>
+```
+```css
+.float-img {
+  float: left;
+  margin-right: 1rem;
+  width: 200px;
+}
+```
+
+We can use the `clear` property to the space around `float`. 
+
+**Note** - Floated elements are removed from the normal document flow. This might create problems when `float` is inside a container. The container might collapse if there is nothing execpt the `float` element inside it.<br />
+To fix this we can use the `display : flow-root` property in the container.
