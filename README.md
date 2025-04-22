@@ -1073,3 +1073,18 @@ We can use the `clear` property to the space around `float`.
 
 **Note** - Floated elements are removed from the normal document flow. This might create problems when `float` is inside a container. The container might collapse if there is nothing execpt the `float` element inside it.<br />
 To fix this we can use the `display : flow-root` property in the container.
+<br />
+
+<h2>Columns</h2>
+CSS Columns let you flow content into multiple vertical columns, automatically splitting the content.
+
+<table class="min-w-full" data-start="620" data-end="1231"><thead data-start="620" data-end="716"><tr data-start="620" data-end="716"><th data-start="620" data-end="640">Property</th><th data-start="640" data-end="680">What it does</th><th data-start="680" data-end="716">Example</th></tr></thead><tbody data-start="814" data-end="1231"><tr data-start="814" data-end="910"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="814" data-end="833"><code data-start="816" data-end="830">column-count</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="833" data-end="874">Number of columns</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="874" data-end="910"><code data-start="876" data-end="894">column-count: 2;</code></td></tr><tr data-start="911" data-end="1033"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="911" data-end="930"><code data-start="913" data-end="927">column-width</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)] min-w-[calc(var(--thread-content-max-width)/3)]" data-start="930" data-end="997">Desired width of each column (browser adjusts number of columns)</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="997" data-end="1033"><code data-start="999" data-end="1021">column-width: 200px;</code></td></tr><tr data-start="1034" data-end="1130"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1034" data-end="1053"><code data-start="1036" data-end="1048">column-gap</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1053" data-end="1094">Space between columns</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1094" data-end="1130"><code data-start="1096" data-end="1116">column-gap: 1.5em;</code></td></tr><tr data-start="1131" data-end="1231"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1131" data-end="1150"><code data-start="1133" data-end="1146">column-rule</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)] min-w-[calc(var(--thread-content-max-width)/3)]" data-start="1150" data-end="1196">Adds a line between columns (like a border)</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1196" data-end="1231"><code data-start="1198" data-end="1228">column-rule: 1px solid #ccc;</code></td></tr></tbody></table>
+
+
+**Note** - `column` automatically adds margin on top and bottom of its child elements. The bottom margin of an element overlaps with the top margin of the next element (margin collapsing).  
+<br /><br />
+*Adding Headers to Columns*<br />
+
+`break-inside: avoid` -> prevents the header to split between columns. <br /><br />
+`break-before: column` -> This will always keep header on the top of a column. But this creates an issue when viewport can only have one column, since this forces a column break, it will reduce the font size to make columns.<br /><br />
+`column-span: all;` → allows an element (like a heading) to span across all columns.
