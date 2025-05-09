@@ -1229,6 +1229,66 @@ Percentages: Relative to the container size
 **Background Image**
 
 <table data-start="99" data-end="2371" class="w-fit min-w-(--thread-content-width)"><thead data-start="99" data-end="288"><tr data-start="99" data-end="288"><th data-start="99" data-end="127" data-col-size="sm"><strong data-start="101" data-end="115">Value Type</strong></th><th data-start="127" data-end="205" data-col-size="md"><strong data-start="129" data-end="140">Example</strong></th><th data-start="205" data-end="288" data-col-size="md"><strong data-start="207" data-end="222">Description</strong></th></tr></thead><tbody data-start="480" data-end="2371"><tr data-start="480" data-end="668"><td data-start="480" data-end="508" data-col-size="sm"><code data-start="482" data-end="488">none</code></td><td data-col-size="md" data-start="508" data-end="586"><code data-start="510" data-end="535">background-image: none;</code></td><td data-col-size="md" data-start="586" data-end="668">No background image is applied.</td></tr><tr data-start="669" data-end="857"><td data-start="669" data-end="697" data-col-size="sm"><code data-start="671" data-end="678">url()</code></td><td data-col-size="md" data-start="697" data-end="775"><code data-start="699" data-end="736">background-image: url("image.jpg");</code></td><td data-col-size="md" data-start="775" data-end="857">Loads an external image file.</td></tr><tr data-start="858" data-end="1046"><td data-start="858" data-end="886" data-col-size="sm">Multiple <code data-start="869" data-end="876">url()</code></td><td data-col-size="md" data-start="886" data-end="964"><code data-start="888" data-end="941">background-image: url("img1.png"), url("img2.jpg");</code></td><td data-col-size="md" data-start="964" data-end="1046">Applies multiple background images in layers.</td></tr><tr data-start="1047" data-end="1235"><td data-start="1047" data-end="1075" data-col-size="sm"><code data-start="1049" data-end="1068">linear-gradient()</code></td><td data-col-size="md" data-start="1075" data-end="1153"><code data-start="1077" data-end="1134">background-image: linear-gradient(to right, red, blue);</code></td><td data-col-size="md" data-start="1153" data-end="1235">Creates a linear color gradient.</td></tr><tr data-start="1236" data-end="1424"><td data-start="1236" data-end="1264" data-col-size="sm"><code data-start="1238" data-end="1257">radial-gradient()</code></td><td data-col-size="md" data-start="1264" data-end="1342"><code data-start="1266" data-end="1330">background-image: radial-gradient(circle, red, yellow, green);</code></td><td data-col-size="md" data-start="1342" data-end="1424">Creates a radial color gradient.</td></tr><tr data-start="1425" data-end="1613"><td data-start="1425" data-end="1453" data-col-size="sm"><code data-start="1427" data-end="1445">conic-gradient()</code></td><td data-col-size="md" data-start="1453" data-end="1531"><code data-start="1455" data-end="1521">background-image: conic-gradient(from 0deg, red, yellow, green);</code></td><td data-col-size="md" data-start="1531" data-end="1613">Creates a conic (angular) gradient.</td></tr><tr data-start="1614" data-end="1802"><td data-start="1614" data-end="1642" data-col-size="sm"><code data-start="1616" data-end="1629">image-set()</code></td><td data-col-size="md" data-start="1642" data-end="1720"><code data-start="1644" data-end="1713">background-image: image-set(url("low.jpg") 1x, url("high.jpg") 2x);</code></td><td data-col-size="md" data-start="1720" data-end="1802">Provides multiple image sources for different resolutions.</td></tr><tr data-start="2183" data-end="2371"><td data-start="2183" data-end="2211" data-col-size="sm">CSS Functions with comma</td><td data-col-size="md" data-start="2211" data-end="2290"><code data-start="2213" data-end="2289">background-image: url("img.png"), linear-gradient(to bottom, white, gray);</code></td><td data-col-size="md" data-start="2290" data-end="2371">Combines image layers and gradients for complex backgrounds.</td></tr></tbody></table>
-
+<br /><br />
 
 `-webkit-background-clip: text` or `background-clip: text` to make the bg appeart just behind the text.
+<br /><br /><br />
+
+<h2>Media Queries</h2>
+
+Media queries let you apply styles conditionally based on the device's characteristics, such as screen width, height, orientation, resolution, etc.
+
+The meta tag *viewport* allows us to use media queries
+
+Syntax : <br />
+`@media` media type `and` (condition : breakpoint) {<br />
+    //css rules<br />
+}
+
+```css
+ @media screen and (min-width : 481px) {
+    //we can override styles here
+ }
+```
+
+`min-width` - starting from <br />
+`max-width` - upto <br />
+
+**Note** - Usually we design for mobiles first (smallest first) and then for tablets and desktops.<br /><br />
+
+**Common Media Features**
+<table data-start="640" data-end="1406" class="w-fit min-w-(--thread-content-width)"><thead data-start="640" data-end="734"><tr data-start="640" data-end="734"><th data-start="640" data-end="659" data-col-size="sm">Feature</th><th data-start="659" data-end="685" data-col-size="sm">Example</th><th data-start="685" data-end="734" data-col-size="md">Description</th></tr></thead><tbody data-start="831" data-end="1406"><tr data-start="831" data-end="926"><td data-start="831" data-end="850" data-col-size="sm"><code data-start="833" data-end="844">max-width</code></td><td data-start="850" data-end="877" data-col-size="sm"><code data-start="852" data-end="870">max-width: 768px</code></td><td data-col-size="md" data-start="877" data-end="926">Applies if screen width is ≤ 768px</td></tr><tr data-start="927" data-end="1022"><td data-start="927" data-end="946" data-col-size="sm"><code data-start="929" data-end="940">min-width</code></td><td data-start="946" data-end="973" data-col-size="sm"><code data-start="948" data-end="967">min-width: 1024px</code></td><td data-col-size="md" data-start="973" data-end="1022">Applies if screen width is ≥ 1024px</td></tr><tr data-start="1023" data-end="1118"><td data-start="1023" data-end="1042" data-col-size="sm"><code data-start="1025" data-end="1038">orientation</code></td><td data-start="1042" data-end="1069" data-col-size="sm"><code data-start="1044" data-end="1067">orientation: portrait</code></td><td data-start="1069" data-end="1118" data-col-size="md">Portrait or landscape orientation</td></tr><tr data-start="1119" data-end="1214"><td data-start="1119" data-end="1138" data-col-size="sm"><code data-start="1121" data-end="1133">max-height</code></td><td data-col-size="sm" data-start="1138" data-end="1165"><code data-start="1140" data-end="1159">max-height: 500px</code></td><td data-col-size="md" data-start="1165" data-end="1214">Applies if screen height is ≤ 500px</td></tr><tr data-start="1215" data-end="1310"><td data-start="1215" data-end="1234" data-col-size="sm"><code data-start="1217" data-end="1233">min-resolution</code></td><td data-col-size="sm" data-start="1234" data-end="1261"><code data-start="1236" data-end="1259">min-resolution: 2dppx</code></td><td data-col-size="md" data-start="1261" data-end="1310">High-resolution displays (like Retina)</td></tr><tr data-start="1311" data-end="1406"><td data-start="1311" data-end="1330" data-col-size="sm"><code data-start="1313" data-end="1320">hover</code></td><td data-col-size="sm" data-start="1330" data-end="1357"><code data-start="1332" data-end="1345">hover: none</code></td><td data-col-size="md" data-start="1357" data-end="1406">Checks if hovering is possible (e.g. touch)</td></tr></tbody></table>
+<br /><br />
+
+**Common Media Types**
+<table data-start="457" data-end="867" class="w-fit min-w-(--thread-content-width)"><thead data-start="457" data-end="524"><tr data-start="457" data-end="524"><th data-start="457" data-end="474" data-col-size="sm"><strong data-start="459" data-end="473">Media Type</strong></th><th data-start="474" data-end="524" data-col-size="md"><strong data-start="476" data-end="491">Description</strong></th></tr></thead><tbody data-start="593" data-end="867"><tr data-start="593" data-end="660"><td data-start="593" data-end="610" data-col-size="sm"><code data-start="595" data-end="600">all</code></td><td data-col-size="md" data-start="610" data-end="660">Applies to all devices (default)</td></tr><tr data-start="661" data-end="728"><td data-start="661" data-end="678" data-col-size="sm"><code data-start="663" data-end="671">screen</code></td><td data-col-size="md" data-start="678" data-end="728">Applies to screens (phones, tablets, desktops)</td></tr><tr data-start="729" data-end="797"><td data-start="729" data-end="746" data-col-size="sm"><code data-start="731" data-end="738">print</code></td><td data-col-size="md" data-start="746" data-end="797">Applies when printing or in print preview</td></tr><tr data-start="798" data-end="867"><td data-start="798" data-end="815" data-col-size="sm"><code data-start="800" data-end="808">speech</code></td><td data-col-size="md" data-start="815" data-end="867">Applies to screen readers or speech synthesizers</td></tr></tbody></table>
+
+
+### Common Media Query breakpoints:
+| Breakpoint | Description |
+| -------- | ---------- |
+| < 481px | Mobile devices |
+| 481px — 768px | iPads, Tablets |
+| 769px — 1024px | Small screens, laptops |
+| 1025px — 1200px | Desktops, large screens |
+| 1201px and greater | Extra large screens, TV |
+
+### Bootstrap breakpoints:
+| Breakpoint | Description |
+| -------- | ---------- |
+| < 576px | xs |
+| >=576px | small |
+| >=768px | medium |
+| >=992px | large |
+| >=1200px | xl |
+| >=1400px | 2xl |
+
+### Tailwind breakpoints:
+| Breakpoint | Description |
+| -------- | ---------- |
+| < 640px | xs |
+| >=640px | small |
+| >=768px | medium |
+| >=1024px | large |
+| >=1280px | xl |
+| >=1536px | 2xl |
