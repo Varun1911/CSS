@@ -1160,4 +1160,75 @@ Now the container becomes a grid parent, and its direct children are grid items.
 
 `place-content` -> shorthand for `align-content` + `justify-content`
  
- <h2></h2>
+<h2>Background Images</h2>
+
+Always give some width and height to the images in the html file. This is recommended as it tells the browser to reserve space for the image. It wouldn't really use that value as we will override it in the css file but if the css fails to load the borwser will still reserve some space.
+
+
+Images leave a little space below them. This is just like characters which have something below them like 'p', 'g' etc. There is some space below the base even if we dont give any padding. <br />
+This is because images are inline elements and it was originally imagined to be used with some text, thus leaving some space below it. <br />
+To remove this we can reset the images in the css like so :
+```css
+    display : block;
+```
+<br />
+
+**Note** - Set some bg color under bg images as a backup in case the images do not load.
+<br /><br />
+
+**Background Repeat**
+
+```css
+background-repeat: repeat | repeat-x | repeat-y | no-repeat | space | round;
+```
+
+`repeat`: (default) The background image is repeated both horizontally and vertically.
+
+`repeat-x`: The background image is repeated only horizontally.
+
+`repeat-y`: The background image is repeated only vertically.
+
+`no-repeat`: The background image is not repeated.
+
+`space`: The image is repeated as many times as will fit without clipping, and extra space is distributed around the images.
+
+`round`: The image is scaled so that it fits exactly an integer number of times in the container.
+<br /><br /><br />
+
+**Background Size**
+
+```css
+background-size: auto | cover | contain | <length> | <percentage>;
+```
+
+`auto`: (default) Keeps the image's original size.
+
+`cover`: Scales the image to cover the entire container, possibly cropping it.
+
+`contain`: Scales the image to fit entirely within the container, preserving aspect ratio.
+
+`<length>` (e.g., `100px` `50px`): Sets the width and height explicitly.
+
+`<percentage>` (e.g., `100%` `50%`): Relative to the size of the container.
+<br /><br /><br />
+
+**Background Position**
+
+```css
+background-position: <x-position> <y-position>;
+```
+<br /> 
+
+Keywords: `left`, `right`, `top`, `bottom`, `center`
+
+Lengths: `px`, `em`, `rem`, etc.
+
+Percentages: Relative to the container size
+<br /> <br /> <br /> 
+
+**Background Image**
+
+<table data-start="99" data-end="2371" class="w-fit min-w-(--thread-content-width)"><thead data-start="99" data-end="288"><tr data-start="99" data-end="288"><th data-start="99" data-end="127" data-col-size="sm"><strong data-start="101" data-end="115">Value Type</strong></th><th data-start="127" data-end="205" data-col-size="md"><strong data-start="129" data-end="140">Example</strong></th><th data-start="205" data-end="288" data-col-size="md"><strong data-start="207" data-end="222">Description</strong></th></tr></thead><tbody data-start="480" data-end="2371"><tr data-start="480" data-end="668"><td data-start="480" data-end="508" data-col-size="sm"><code data-start="482" data-end="488">none</code></td><td data-col-size="md" data-start="508" data-end="586"><code data-start="510" data-end="535">background-image: none;</code></td><td data-col-size="md" data-start="586" data-end="668">No background image is applied.</td></tr><tr data-start="669" data-end="857"><td data-start="669" data-end="697" data-col-size="sm"><code data-start="671" data-end="678">url()</code></td><td data-col-size="md" data-start="697" data-end="775"><code data-start="699" data-end="736">background-image: url("image.jpg");</code></td><td data-col-size="md" data-start="775" data-end="857">Loads an external image file.</td></tr><tr data-start="858" data-end="1046"><td data-start="858" data-end="886" data-col-size="sm">Multiple <code data-start="869" data-end="876">url()</code></td><td data-col-size="md" data-start="886" data-end="964"><code data-start="888" data-end="941">background-image: url("img1.png"), url("img2.jpg");</code></td><td data-col-size="md" data-start="964" data-end="1046">Applies multiple background images in layers.</td></tr><tr data-start="1047" data-end="1235"><td data-start="1047" data-end="1075" data-col-size="sm"><code data-start="1049" data-end="1068">linear-gradient()</code></td><td data-col-size="md" data-start="1075" data-end="1153"><code data-start="1077" data-end="1134">background-image: linear-gradient(to right, red, blue);</code></td><td data-col-size="md" data-start="1153" data-end="1235">Creates a linear color gradient.</td></tr><tr data-start="1236" data-end="1424"><td data-start="1236" data-end="1264" data-col-size="sm"><code data-start="1238" data-end="1257">radial-gradient()</code></td><td data-col-size="md" data-start="1264" data-end="1342"><code data-start="1266" data-end="1330">background-image: radial-gradient(circle, red, yellow, green);</code></td><td data-col-size="md" data-start="1342" data-end="1424">Creates a radial color gradient.</td></tr><tr data-start="1425" data-end="1613"><td data-start="1425" data-end="1453" data-col-size="sm"><code data-start="1427" data-end="1445">conic-gradient()</code></td><td data-col-size="md" data-start="1453" data-end="1531"><code data-start="1455" data-end="1521">background-image: conic-gradient(from 0deg, red, yellow, green);</code></td><td data-col-size="md" data-start="1531" data-end="1613">Creates a conic (angular) gradient.</td></tr><tr data-start="1614" data-end="1802"><td data-start="1614" data-end="1642" data-col-size="sm"><code data-start="1616" data-end="1629">image-set()</code></td><td data-col-size="md" data-start="1642" data-end="1720"><code data-start="1644" data-end="1713">background-image: image-set(url("low.jpg") 1x, url("high.jpg") 2x);</code></td><td data-col-size="md" data-start="1720" data-end="1802">Provides multiple image sources for different resolutions.</td></tr><tr data-start="2183" data-end="2371"><td data-start="2183" data-end="2211" data-col-size="sm">CSS Functions with comma</td><td data-col-size="md" data-start="2211" data-end="2290"><code data-start="2213" data-end="2289">background-image: url("img.png"), linear-gradient(to bottom, white, gray);</code></td><td data-col-size="md" data-start="2290" data-end="2371">Combines image layers and gradients for complex backgrounds.</td></tr></tbody></table>
+
+
+`-webkit-background-clip: text` or `background-clip: text` to make the bg appeart just behind the text.
