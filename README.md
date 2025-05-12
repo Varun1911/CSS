@@ -1362,3 +1362,12 @@ Variables can be scoped to elements, not just global:<br />
 ```
 
 **Note** - We can also override varibales inside specific classes 
+
+
+<h2>Functions</h2>
+
+We have math fucntions like `min()`, `max()`, `clamp()` & `calc()`.<br>
+Color functions like `rgb()`, `rgba()`, `hsla()`, `color-mix()`, `color()`<br>
+Transform & shape functions like `translate()`, `scale()`, `rotate()` & `skew()`.<br>
+Utility functions like `var()` and `attr()`.
+Filter fucntions like `brightness()`, `contrast()`, `blur()`, `drop-shadow()` etc.
