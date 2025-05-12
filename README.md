@@ -1318,4 +1318,47 @@ nav :is(a:hover, a:focus) {
 }
 ```
 <br />
-The :where() pseudo-class lets you group multiple selectors like :is(), **but with zero specificity
+The :where() pseudo-class lets you group multiple selectors like :is(), **but with zero specificity.
+
+
+<h2>CSS Varibales</h2>
+CSS variables — also called custom properties — let you define reusable values in your CSS.<br /><br />
+
+Syntax-
+
+```css
+:root {
+  --main-color: #3498db;
+  --padding: 1rem;
+}
+```
+
+<br />
+
+Using a variable
+```css
+button {
+  background-color: var(--main-color);
+  padding: var(--padding);
+}
+```
+
+**Scoped Variables** :<br /> 
+Variables can be scoped to elements, not just global:<br /> 
+```css
+.card {
+  --border-radius: 8px;
+  border-radius: var(--border-radius);
+}
+```
+<br>
+
+**Nesting Varibles** : 
+```css
+:root {
+  --base-color: #3498db;
+  --button-bg: var(--base-color);
+}
+```
+
+**Note** - We can also override varibales inside specific classes 
