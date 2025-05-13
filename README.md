@@ -1437,4 +1437,15 @@ CSS **Animations** let you animate transitions from one style configuration to a
 ```
 You can use:<br>
 Percentages (`0%`, `50%`, `100%`)<br>
-Or `from` / `to` as shortcuts for `0%` and `100%`
+Or `from` / `to` as shortcuts for `0%` and `100%`.
+
+
+<h2>Organizing CSS</h2>
+
+-- Follow Your Team
+
+-- Use comments to create headers
+
+-- Sort properties alphabetically ABCSS
+
+-- Larger projects follow a naming convention methodology. For example: BEM - Block, Element, Modifier
