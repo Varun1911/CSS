@@ -1371,3 +1371,70 @@ Color functions like `rgb()`, `rgba()`, `hsla()`, `color-mix()`, `color()`<br>
 Transform & shape functions like `translate()`, `scale()`, `rotate()` & `skew()`.<br>
 Utility functions like `var()` and `attr()`.
 Filter fucntions like `brightness()`, `contrast()`, `blur()`, `drop-shadow()` etc.
+<br/><br/>
+
+<h2>Transition and Animations</h2>
+
+CSS **Transition** allows you to animate changes in CSS properties smoothly over time. You can customize the property, duration, timing function, and delay.
+
+CSS transition Shorthand Syntax
+```css
+transition: [property] [duration] [timing-function] [delay];
+```
+<br/><br/>
+
+**Transition Properties**
+<table data-start="400" data-end="904" class="w-fit min-w-(--thread-content-width)"><thead data-start="400" data-end="481"><tr data-start="400" data-end="481"><th data-start="400" data-end="422" data-col-size="sm"><strong data-start="402" data-end="414">Property</strong></th><th data-start="422" data-end="481" data-col-size="md"><strong data-start="424" data-end="439">Description</strong></th></tr></thead><tbody data-start="564" data-end="904"><tr data-start="564" data-end="651"><td data-start="564" data-end="588" data-col-size="sm"><code data-start="566" data-end="587">transition-property</code></td><td data-col-size="md" data-start="588" data-end="651">Specifies the property to animate (e.g. <code data-start="630" data-end="637">width</code>, <code data-start="639" data-end="648">opacity</code>)</td></tr><tr data-start="652" data-end="734"><td data-start="652" data-end="676" data-col-size="sm"><code data-start="654" data-end="675">transition-duration</code></td><td data-start="676" data-end="734" data-col-size="md">Time to complete the transition (e.g. <code data-start="716" data-end="722">0.3s</code>, <code data-start="724" data-end="731">500ms</code>)</td></tr><tr data-start="735" data-end="820"><td data-start="735" data-end="766" data-col-size="sm"><code data-start="737" data-end="765">transition-timing-function</code></td><td data-start="766" data-end="820" data-col-size="md">Speed curve (e.g. <code data-start="786" data-end="792">ease</code>, <code data-start="794" data-end="802">linear</code>, <code data-start="804" data-end="817">ease-in-out</code>)</td></tr><tr data-start="821" data-end="904"><td data-start="821" data-end="845" data-col-size="sm"><code data-start="823" data-end="841">transition-delay</code></td><td data-col-size="md" data-start="845" data-end="904">Time to wait before the transition starts</td></tr></tbody></table>
+<br/><br/>
+
+
+**Common Timing Functions**
+<table data-start="1155" data-end="1748" class="w-fit min-w-(--thread-content-width)"><thead data-start="1155" data-end="1220"><tr data-start="1155" data-end="1220"><th data-start="1155" data-end="1171" data-col-size="sm">Value</th><th data-start="1171" data-end="1220" data-col-size="md">Behavior</th></tr></thead><tbody data-start="1287" data-end="1748"><tr data-start="1287" data-end="1352"><td data-start="1287" data-end="1303" data-col-size="sm"><code data-start="1289" data-end="1295">ease</code></td><td data-start="1303" data-end="1352" data-col-size="md">Default. Slow start, fast middle, slow end</td></tr><tr data-start="1353" data-end="1418"><td data-start="1353" data-end="1369" data-col-size="sm"><code data-start="1355" data-end="1363">linear</code></td><td data-col-size="md" data-start="1369" data-end="1418">Constant speed</td></tr><tr data-start="1419" data-end="1484"><td data-start="1419" data-end="1435" data-col-size="sm"><code data-start="1421" data-end="1430">ease-in</code></td><td data-col-size="md" data-start="1435" data-end="1484">Starts slow, ends fast</td></tr><tr data-start="1485" data-end="1550"><td data-start="1485" data-end="1501" data-col-size="sm"><code data-start="1487" data-end="1497">ease-out</code></td><td data-start="1501" data-end="1550" data-col-size="md">Starts fast, ends slow</td></tr><tr data-start="1551" data-end="1616"><td data-start="1551" data-end="1567" data-col-size="sm"><code data-start="1553" data-end="1566">ease-in-out</code></td><td data-col-size="md" data-start="1567" data-end="1616">Slow start and end</td></tr><tr data-start="1617" data-end="1682"><td data-start="1617" data-end="1650" data-col-size="sm"><code data-start="1619" data-end="1649">cubic-bezier(x1, y1, x2, y2)</code></td><td data-col-size="md" data-start="1650" data-end="1682">Custom timing curve</td></tr><tr data-start="1683" data-end="1748"><td data-start="1683" data-end="1700" data-col-size="sm">`steps(n, start</td><td data-start="1700" data-end="1707" data-col-size="md">end)`</td></tr></tbody></table>
+<br/><br/>
+
+**Multiple Transitions**
+```css
+transition: background-color 0.3s ease, transform 0.4s linear;
+```
+<br/><br/>
+CSS **Animations** let you animate transitions from one style configuration to another using the @keyframes rule.
+
+**Basic Structure**
+```css
+.element {
+  animation-name: myAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes myAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+```
+
+<br><br>
+**Animation Properties**
+<table data-start="637" data-end="1703" class="w-fit min-w-(--thread-content-width)"><thead data-start="637" data-end="741"><tr data-start="637" data-end="741"><th data-start="637" data-end="666" data-col-size="sm"><strong data-start="639" data-end="651">Property</strong></th><th data-start="666" data-end="741" data-col-size="md"><strong data-start="668" data-end="679">Purpose</strong></th></tr></thead><tbody data-start="848" data-end="1703"><tr data-start="848" data-end="953"><td data-start="848" data-end="877" data-col-size="sm"><code data-start="850" data-end="866">animation-name</code></td><td data-col-size="md" data-start="877" data-end="953">Name of the <code data-start="891" data-end="903">@keyframes</code> to use</td></tr><tr data-start="954" data-end="1059"><td data-start="954" data-end="983" data-col-size="sm"><code data-start="956" data-end="976">animation-duration</code></td><td data-col-size="md" data-start="983" data-end="1059">How long the animation runs (<code data-start="1014" data-end="1017">s</code> or <code data-start="1021" data-end="1025">ms</code>)</td></tr><tr data-start="1060" data-end="1165"><td data-start="1060" data-end="1089" data-col-size="sm"><code data-start="1062" data-end="1089">animation-timing-function</code></td><td data-col-size="md" data-start="1089" data-end="1165">Controls speed curve (<code data-start="1113" data-end="1119">ease</code>, <code data-start="1121" data-end="1129">linear</code>, etc.)</td></tr><tr data-start="1166" data-end="1271"><td data-start="1166" data-end="1195" data-col-size="sm"><code data-start="1168" data-end="1185">animation-delay</code></td><td data-start="1195" data-end="1271" data-col-size="md">Wait before animation starts</td></tr><tr data-start="1272" data-end="1377"><td data-start="1272" data-end="1301" data-col-size="sm"><code data-start="1274" data-end="1301">animation-iteration-count</code></td><td data-col-size="md" data-start="1301" data-end="1377">Number of times the animation runs (<code data-start="1339" data-end="1342">1</code>, <code data-start="1344" data-end="1354">infinite</code>, <code data-start="1356" data-end="1359">3</code>, etc.)</td></tr><tr data-start="1378" data-end="1484"><td data-start="1378" data-end="1407" data-col-size="sm"><code data-start="1380" data-end="1401">animation-direction</code></td><td data-col-size="md" data-start="1407" data-end="1484">Direction of play (<code data-start="1428" data-end="1436">normal</code>, <code data-start="1438" data-end="1447">reverse</code>, <code data-start="1449" data-end="1460">alternate</code>, <code data-start="1462" data-end="1481">alternate-reverse</code>)</td></tr><tr data-start="1485" data-end="1597"><td data-start="1485" data-end="1514" data-col-size="sm"><code data-start="1487" data-end="1508">animation-fill-mode</code></td><td data-start="1514" data-end="1597" data-col-size="md">Defines styles before/after animation (<code data-start="1555" data-end="1561">none</code>, <code data-start="1563" data-end="1573">forwards</code>, <code data-start="1575" data-end="1586">backwards</code>, <code data-start="1588" data-end="1594">both</code>)</td></tr><tr data-start="1598" data-end="1703"><td data-start="1598" data-end="1627" data-col-size="sm"><code data-start="1600" data-end="1622">animation-play-state</code></td><td data-col-size="md" data-start="1627" data-end="1703">Controls animation play (<code data-start="1654" data-end="1663">running</code>, <code data-start="1665" data-end="1673">paused</code>)</td></tr></tbody></table>
+<br/><br/>
+
+**@keyframes Syntax**
+```css
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(100px); }
+  100% { transform: translateX(0); }
+}
+```
+You can use:<br>
+Percentages (`0%`, `50%`, `100%`)<br>
+Or `from` / `to` as shortcuts for `0%` and `100%`

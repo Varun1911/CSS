@@ -26,10 +26,80 @@ main {
   gap: 1rem;
 }
 
-div {
+main div {
   width: 200px;
   height: 200px;
   border: 1px solid #000;
   display: grid;
   place-content: center;
+}
+
+main div:first-child{
+  background-color: dodgerblue;
+  /* transform: translateX(-50%); */
+  /* transform: rotateX(45deg); */
+  /* transform: scaleX(120%); */
+  /* transform: skewX(-10deg); */
+}
+
+
+main div:nth-child(2){
+  background-color: yellow;
+  /* transform: translateY(-2rem); */
+  /* transform: rotateY(45deg); */
+  /* transform: scaleY(30%); */
+  /* transform: skewY(10deg); */
+}
+
+
+main div:last-child{
+  background-color: limegreen;
+  /* transform: translate(100%, -5rem); */
+  /* transform: rotate(45deg); */
+  /* transform: scale(50%, 120%); */
+  /* transform: skew(-15deg, -10deg); */
+}
+
+
+main div:hover{
+  background-color: midnightblue;
+  /* transition-property: background-color, transform;
+  transition-duration: 1s, 1.5s;
+  transition-delay: 0.25s; */
+  /* transition: background-color, transform 1s, 1.5s 0.25s; */
+  transition: all 1.5s 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+main div:last-child:hover{
+  transform: rotate(180deg);
+}
+
+.animate{
+  /* animation-name: slide;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 2;
+  animation-direction: normal;
+  animation-fill-mode: forwards; */
+  animation: 5s ease-in-out 1s 2 normal forwards slide;
+}
+
+@keyframes slide{
+  0%{
+    transform: translateX(0);
+  }
+
+  33%{
+    transform: translateX(300px) rotate(180deg);
+  }
+
+  66%{
+    transform: translateX(-300px) rotate(-180deg);
+  }
+  100%{
+    transform: translateX(0px);
+    background-color: rebeccapurple;
+  }
 }
