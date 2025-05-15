@@ -7,7 +7,7 @@
 }
 
 :root {
-    --HEADER-BGCOLOR: #333;
+    --HEADER-BGCOLOR: #000;
     --HEADER-COLOR: whitesmoke;
 }
 
@@ -17,17 +17,23 @@ html {
 }
 
 body {
+    background-color: midnightblue;
+    background-image: linear-gradient(to right, midnightblue, rebeccapurple);
     min-height: 100vh;
     display: flex;
     flex-flow: column nowrap;
 }
 
 header {
-    background-color: var(--HEADER-BGCOLOR);
     color: var(--HEADER-COLOR);
+    position: sticky;
+    top:0;
+    z-index: 1;
+    
 }
 
 .header-title-line{
+    background-color: var(--HEADER-BGCOLOR);
     padding: 0.25rem 0.5rem;
     display: flex;
     flex-flow: row nowrap;
@@ -43,6 +49,19 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
+}
+
+.closeMenuBtn{
+    display: none;
+    background-color: transparent;
+    outline: none;
+    /* border: 1px solid red; */
+    border: none;
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    width: 48px;
+    height: 48px;
 }
 
 .menu-icon, 
@@ -69,28 +88,42 @@ header {
     transform: translate(-20px, 12px);
 }
 
-:is(header:hover, header:focus-within) .menu-icon{
+.header-title-line:focus-within .menu-icon{
     background-color: transparent;
     transform: rotate(720deg);
 }
 
-:is(header:hover, header:focus-within) .menu-icon::before{
+.header-title-line:focus-within .menu-icon::before{
     transform: translateX(-20px) rotate(45deg);
 }
 
-:is(header:hover, header:focus-within) .menu-icon::after{
+.header-title-line:focus-within .menu-icon::after{
     transform: translateX(-20px) rotate(-45deg);
 }
 
-:is(header:hover, header:focus-within) nav{
-    display: block;
-}
 
 nav{
     display: none;
+    position: relative;
+}
+
+header:focus-within nav{
+    display: block;
     transform-origin: top center;
     animation: showMenu 0.5s ease forwards;
-    background-color: var(--HEADER-BGCOLOR);
+}
+
+header:focus-within .closeMenuBtn{
+    display: block;
+}
+
+header:focus-within .closeMenuBtn:focus{
+    transform: translateX(-50px);
+}
+
+.closeMenuBtn:focus+nav{
+    transform-origin: top center;
+    animation: hideMenu 0.5s ease forwards;
 }
 
 @keyframes showMenu {
@@ -108,7 +141,27 @@ nav{
 
 }
 
+@keyframes hideMenu {
+    0% {
+        transform: scaleY(1);
+    }
+
+    20%{
+        transform: scaleY(1.2);
+    }
+
+    100%{
+        transform: scaleY(0);
+    }
+
+}
+
 nav ul{
+    background-color: var(--HEADER-BGCOLOR);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1;
     list-style-type: none;
     display: flex;
     flex-flow: column nowrap;
@@ -138,3 +191,11 @@ nav a:hover, nav a:focus{
     transform: scale(1.2);
     transition: all 0.3s;
 }
+
+main{
+    flex-grow: 1;
+    display: grid;
+    place-content: center;
+    min-height: 200vh;
+}
+
