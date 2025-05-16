@@ -1449,3 +1449,58 @@ Or `from` / `to` as shortcuts for `0%` and `100%`.
 -- Sort properties alphabetically ABCSS
 
 -- Larger projects follow a naming convention methodology. For example: BEM - Block, Element, Modifier
+
+<h2>Misc</h2>
+
+**`:is()` Selector** - The `:is()` selector in CSS is a pseudo-class function that simplifies writing large, complex selectors by allowing you to group multiple selectors together.
+<br><br>
+
+```css
+:is(h1, h2, h3) {
+  color: navy;
+  font-weight: bold;
+}
+```
+This applies the same styles to all `<h1>,` `<h2>`, and `<h3>` elements.<br><br>
+
+```css
+article :is(h1, h2, h3) {
+  margin-top: 1em;
+}
+```
+This targets any `<h1>`, `<h2>`, or `<h3>` inside an `<article>`.
+<br><br>
+
+**Improves specificity control**: Unlike using multiple selectors separated by commas, :is() only applies the specificity of the most specific argument.<br><br>
+
+
+**`:where()` Selector** - The `:where()` selector in CSS is very similar to `:is()`, but it has zero specificity, regardless of what selectors you put inside it.
+<br><br>
+
+```css
+:where(h1, h2, h3) {
+  margin-top: 0;
+}
+```
+This will apply` margin-top: 0`to all `<h1>`, `<h2>`, and `<h3>` elements, but won't increase specificity — so other rules can easily override it.
+<br><br>
+
+**Common Use Case**<br>
+Setting default or reset styles without "fighting" other styles:
+```css
+:where(article, section, aside) {
+  padding: 1rem;
+  background: #f8f8f8;
+}
+```
+<br><br>
+
+**`:has()` Selector** - The `:has()` selector in CSS is a relational pseudo-class that allows you to select an element based on its descendants or sub-elements — something that wasn’t possible with pure CSS before.
+<br><br>
+
+```css
+/* Select any <div> that contains an <img> */
+div:has(img) {
+  border: 2px solid green;
+}
+```
